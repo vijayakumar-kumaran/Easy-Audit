@@ -1,0 +1,196 @@
+:root {
+  --accent-gold: #f8b400;
+  --accent-gold-hover: #e0a800;
+  --accent-blue: #6366f1;
+  --accent-blue-hover: #4f46e5;
+  --accent-green: #10b981;
+  --accent-red: #ef4444;
+  --accent-red-hover: #dc2626;
+  --font-family: 'Outfit', sans-serif;
+}
+
+body.dark-mode {
+  --bg-primary: #0f172a;
+  --bg-secondary: #1e293b;
+  --bg-tertiary: #334155;
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --border-glass: rgba(255, 255, 255, 0.08);
+  --bg-glass: rgba(30, 41, 59, 0.7);
+  --bg-notification-glass:rgb(30, 41, 59);
+  --bg-glass-hover: rgba(255, 255, 255, 0.04);
+  --input-bg: rgba(15, 23, 42, 0.6);
+  --input-color: #f8fafc;
+  --input-border: rgba(255, 255, 255, 0.1);
+  --card-shadow: rgba(0, 0, 0, 0.35);
+  --accent-soft-blue: rgba(99, 102, 241, 0.15);
+  --accent-soft-gold: rgba(248, 180, 0, 0.15);
+}
+
+body.light-mode {
+  --bg-primary: #f1f5f9;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #e2e8f0;
+  --text-primary: #0f172a;
+  --text-secondary: #64748b;
+  --border-glass: rgba(15, 23, 42, 0.08);
+  --bg-glass: rgba(255, 255, 255, 0.85);
+  --bg-notification-glass: rgb(255, 255, 255);
+  --bg-glass-hover: rgba(15, 23, 42, 0.03);
+  --input-bg: #f8fafc;
+  --input-color: #0f172a;
+  --input-border: rgba(15, 23, 42, 0.12);
+  --card-shadow: rgba(15, 23, 42, 0.06);
+  --accent-soft-blue: rgba(99, 102, 241, 0.1);
+  --accent-soft-gold: rgba(248, 180, 0, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  transition: background 0.35s ease, color 0.35s ease;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bg-tertiary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
+
+/* Glassmorphism card utility */
+.glass-card {
+  background: var(--bg-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-glass);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px var(--card-shadow);
+}
+
+/* Global button styling */
+button, .btn {
+  font-family: var(--font-family);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* Form Fields Styling Reset for Redesigns */
+.form-control-custom {
+  width: 100%;
+  padding: 0.85rem 1.25rem;
+  font-size: 0.95rem;
+  font-family: var(--font-family);
+  background: var(--input-bg);
+  border: 1px solid var(--input-border);
+  color: var(--input-color);
+  border-radius: 10px;
+  outline: none;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.form-control-custom:focus {
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.25);
+}
+
+/* Table styling system */
+.custom-table-container {
+  overflow-x: auto;
+  margin-top: 1rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-glass);
+}
+
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+.custom-table th {
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+  padding: 1rem 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.custom-table td {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--border-glass);
+  color: var(--text-secondary);
+}
+
+.custom-table tr:last-child td {
+  border-bottom: none;
+}
+
+.custom-table tr:hover td {
+  background: var(--bg-glass-hover);
+  color: var(--text-primary);
+}
+
+/* Back button design */
+.back-button {
+  background: transparent;
+  border: 1px solid var(--border-glass);
+  color: var(--text-secondary);
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  margin-bottom: 1.5rem;
+}
+
+.back-button:hover {
+  background: var(--bg-glass-hover);
+  color: var(--text-primary);
+  border-color: var(--text-secondary);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.4s ease forwards;
+}

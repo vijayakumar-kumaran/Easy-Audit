@@ -1,0 +1,405 @@
+.home-dashboard {
+  min-height: 100vh;
+  padding: 0 0 2rem 0;
+  background: transparent;
+}
+
+.home-loading {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Outfit', sans-serif;
+  color: var(--text-secondary);
+  font-size: 1.2rem;
+}
+
+/* Header Styles */
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 2rem;
+  margin-bottom: 2rem;
+}
+
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.brand-icon {
+  color: var(--accent-gold);
+  width: 32px;
+  height: 32px;
+  filter: drop-shadow(0 0 8px rgba(248, 180, 0, 0.4));
+}
+
+.header-brand h1 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-gold) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.profile-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-family: 'Outfit', sans-serif;
+}
+
+.welcome-tag {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.username-tag {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.role-tag {
+  font-size: 0.7rem;
+  background: var(--accent-soft-blue);
+  color: var(--accent-blue);
+  padding: 2px 8px;
+  border-radius: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-top: 2px;
+  border: 1px solid rgba(99, 102, 241, 0.25);
+}
+
+.logout-btn {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  color: var(--accent-red);
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.logout-btn:hover {
+  background: var(--accent-red);
+  color: white;
+  border-color: var(--accent-red);
+  box-shadow: 0 0 12px rgba(239, 68, 68, 0.4);
+}
+
+/* Dashboard Layout */
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Metrics Row */
+.metrics-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.metric-card {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem;
+  gap: 1.25rem;
+}
+
+.metric-icon-wrap {
+  width: 54px;
+  height: 54px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.ind-bg {
+  background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+  box-shadow: 0 8px 16px rgba(99, 102, 241, 0.25);
+}
+
+.bus-bg {
+  background: linear-gradient(135deg, #f8b400 0%, #d97706 100%);
+  box-shadow: 0 8px 16px rgba(248, 180, 0, 0.25);
+}
+
+.tax-bg {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  box-shadow: 0 8px 16px rgba(16, 185, 129, 0.25);
+}
+
+.notice-bg {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  box-shadow: 0 8px 16px rgba(239, 68, 68, 0.25);
+}
+
+.metric-info h3 {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: 0.25rem;
+}
+
+.metric-value {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.1;
+}
+
+.metric-sub {
+  display: flex;
+  gap: 0.75rem;
+  font-size: 0.75rem;
+  margin-top: 0.4rem;
+}
+
+.sub-completed {
+  color: var(--accent-green);
+}
+
+.sub-pending {
+  color: var(--accent-red);
+}
+
+/* Grid layout for Panels */
+.dashboard-content-grid {
+  display: grid;
+  grid-template-columns: 1.7fr 1fr;
+  gap: 1.5rem;
+}
+
+@media (max-width: 1024px) {
+  .dashboard-content-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.panel-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  border-bottom: 1px solid var(--border-glass);
+  padding: 1.25rem 1.5rem;
+}
+
+.panel-header h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.panel-header svg {
+  color: var(--accent-gold);
+}
+
+/* Charts Panel */
+.charts-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.charts-flex {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  padding: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .charts-flex {
+    grid-template-columns: 1fr;
+  }
+}
+
+.chart-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.chart-item h4 {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.chart-wrapper {
+  width: 100%;
+}
+
+/* Actions Panel */
+.actions-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.action-groups {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.action-category h3 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.actions-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.action-link {
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 0.75rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.add-act {
+  background: var(--accent-soft-blue);
+  border: 1px solid rgba(99, 102, 241, 0.25);
+  color: var(--accent-blue);
+  font-weight: 600;
+}
+
+.add-act:hover {
+  background: var(--accent-blue);
+  color: white;
+  border-color: var(--accent-blue);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+.view-act {
+  background: var(--accent-soft-gold);
+  border: 1px solid rgba(248, 180, 0, 0.25);
+  color: var(--accent-gold);
+  font-weight: 600;
+}
+
+.view-act:hover {
+  background: var(--accent-gold);
+  color: #1e293b;
+  border-color: var(--accent-gold);
+  box-shadow: 0 4px 12px rgba(248, 180, 0, 0.3);
+}
+
+/* Workflow Sections */
+.workflow-section-title {
+  margin-top: 1rem;
+}
+
+.workflow-section-title h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.workflow-section-title p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-top: 0.25rem;
+}
+
+.workflow-content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .workflow-content-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.workflow-card {
+  padding: 1.5rem;
+}
+
+.card-top {
+  margin-bottom: 1.25rem;
+}
+
+.workflow-badge {
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 20px;
+  display: inline-block;
+}
+
+.workflow-badge.ind-badge {
+  background: var(--accent-soft-blue);
+  color: var(--accent-blue);
+  border: 1px solid rgba(99, 102, 241, 0.25);
+}
+
+.workflow-badge.bus-badge {
+  background: var(--accent-soft-gold);
+  color: var(--accent-gold);
+  border: 1px solid rgba(248, 180, 0, 0.25);
+}
+
+.workflow-actions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.workflow-button {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-glass);
+  border-radius: 10px;
+  padding: 0.9rem 1.25rem;
+  color: var(--text-primary);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.workflow-button:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.15);
+  transform: translateX(5px);
+}
+
+.workflow-button svg {
+  color: var(--accent-gold);
+}

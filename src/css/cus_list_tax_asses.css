@@ -1,0 +1,97 @@
+/* src/css/cus_list_tax_asses.css */
+.list-it-notices-page {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.list-it-notices-page h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  text-align: center;
+}
+
+.list-it-notices-page table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.list-it-notices-page th,
+.list-it-notices-page td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.list-it-notices-page th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-top: 2px solid #007bff;
+}
+
+.list-it-notices-page tr {
+  transition: background-color 0.2s ease-in-out;
+}
+
+.list-it-notices-page tr:hover {
+  background-color: #f9f9f9;
+}
+
+.list-it-notices-page td {
+  color: #333;
+}
+
+.list-it-notices-page a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.list-it-notices-page a:hover {
+  text-decoration: underline;
+}
+
+/* Optional: Make the table responsive */
+@media (max-width: 768px) {
+  .list-it-notices-page table,
+  .list-it-notices-page thead,
+  .list-it-notices-page tbody,
+  .list-it-notices-page th,
+  .list-it-notices-page td,
+  .list-it-notices-page tr {
+    display: block;
+  }
+
+  .list-it-notices-page tr {
+    margin-bottom: 15px;
+  }
+
+  .list-it-notices-page th {
+    text-align: right;
+    padding-right: 10px;
+    position: relative;
+  }
+
+  .list-it-notices-page th::after {
+    content: ':';
+    position: absolute;
+    right: 10px;
+  }
+
+  .list-it-notices-page td {
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
+  }
+
+  .list-it-notices-page td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+}

@@ -1,0 +1,166 @@
+/* Workflows Stylesheet */
+
+.workflow-dispatch-page {
+  padding: 1.5rem 0;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.dispatch-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+@media (max-width: 600px) {
+  .dispatch-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.dispatch-card {
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.25rem;
+}
+
+.dispatch-icon-wrap {
+  width: 60px;
+  height: 60px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.dispatch-card h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.dispatch-card p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  min-height: 45px;
+}
+
+.dispatch-btn {
+  padding: 10px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  width: 100%;
+}
+
+/* Form Layouts */
+.workflow-form-page {
+  padding: 1rem 0;
+  max-width: 950px;
+  margin: 0 auto;
+}
+
+.workflow-form-title {
+  margin-bottom: 2rem;
+}
+
+.workflow-form-title h1 {
+  font-size: 1.8rem;
+  font-weight: 800;
+}
+
+.workflow-form-title p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin-top: 0.25rem;
+}
+
+.workflow-layout-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 2rem;
+}
+
+@media (max-width: 900px) {
+  .workflow-layout-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.form-edit-section {
+  padding: 2rem;
+}
+
+.form-client-read-only-section {
+  padding: 2rem;
+  height: fit-content;
+}
+
+.form-client-read-only-section h3 {
+  font-size: 1.15rem;
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border-glass);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.read-only-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.read-only-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.read-only-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+}
+
+.read-only-value {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+/* Status Badges */
+.status-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+}
+
+.status-pending {
+  background: rgba(239, 68, 68, 0.12);
+  color: var(--accent-red);
+  border-color: rgba(239, 68, 68, 0.2);
+}
+
+.status-inprogress {
+  background: rgba(59, 130, 246, 0.12);
+  color: var(--accent-blue);
+  border-color: rgba(59, 130, 246, 0.2);
+}
+
+.status-completed {
+  background: rgba(16, 185, 129, 0.12);
+  color: var(--accent-green);
+  border-color: rgba(16, 185, 129, 0.2);
+}

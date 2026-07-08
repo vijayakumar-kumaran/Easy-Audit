@@ -3,36 +3,33 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@emotion/react": "^11.13.0",
-    "@emotion/styled": "^11.13.0",
-    "@mui/material": "^5.16.6",
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "axios": "^1.7.3",
-    "bcrypt": "^5.1.1",
-    "body-parser": "^1.20.2",
-    "concurrently": "^8.2.2",
-    "connect-mongo": "^6.0.0",
-    "cors": "^2.8.5",
-    "dotenv": "^17.4.2",
-    "express": "^4.19.2",
-    "express-mysql-session": "^3.0.3",
-    "express-session": "^1.18.0",
-    "mongoose": "^9.7.3",
-    "multer": "^1.4.5-lts.1",
-    "mysql": "^2.18.1",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-icons": "^5.7.0",
-    "react-router": "^6.26.0",
-    "react-router-dom": "^6.26.0",
-    "reactstrap": "^9.2.2",
-    "web-vitals": "^2.1.4"
+  "@emotion/react": "^11.13.0",
+  "@emotion/styled": "^11.13.0",
+  "@mui/material": "^5.16.6",
+  "@testing-library/jest-dom": "^5.17.0",
+  "@testing-library/react": "^13.4.0",
+  "@testing-library/user-event": "^13.5.0",
+  "axios": "^1.7.3",
+  "dotenv": "^16.4.5",
+  "framer-motion": "^11.3.24",
+  "lucide-react": "^0.427.0",
+  "mongoose": "^8.5.2",
+  "react": "^18.3.1",
+  "react-dom": "^18.3.1",
+  "react-router": "^6.26.0",
+  "react-router-dom": "^6.26.0",
+  "reactstrap": "^9.2.2",
+  "recharts": "^2.12.7",
+  "web-vitals": "^2.1.4"
+},
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.1",
+    "vite": "^5.3.5"
   },
   "scripts": {
-    "start": "vite",
     "dev": "vite",
+    "server": "node backend/server.js",
+    "client": "vite",
     "build": "vite build",
     "preview": "vite preview"
   },
@@ -53,9 +50,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@vitejs/plugin-react": "^6.0.3",
-    "vite": "^8.1.3"
   }
 }
