@@ -13,24 +13,29 @@ const LoginPage = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
   const [loading, setLoading] = useState(false);
-  const { login, theme, toggleTheme } = useAuth();
-  const navigate = useNavigate();
+
   const [showWakeupModal, setShowWakeupModal] = useState(false);
   const [progressStep, setProgressStep] = useState(0);
+
+  const { login, theme, toggleTheme } = useAuth();
+  const navigate = useNavigate();
+
   const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    setErrorMessage('');
     setLoading(true);
 
     let modalTimeout;
     let progressInterval;
 
-    // Show modal only if login takes longer than 3 seconds
+    // Show wake-up modal only if login takes longer than 3 seconds
     modalTimeout = setTimeout(() => {
       setShowWakeupModal(true);
-
       setProgressStep(0);
 
       progressInterval = setInterval(() => {
-        setProgressStep(prev => {
+        setProgressStep((prev) => {
           if (prev >= 3) return prev;
           return prev + 1;
         });
@@ -38,40 +43,44 @@ const LoginPage = () => {
 
     }, 3000);
 
-    e.preventDefault();
-    setErrorMessage('');
-    setLoading(true);
-
     try {
-      const response = await axios.post('/api/login', { username, password });
+      const response = await axios.post('/api/login', {
+        username,
+        password,
+      });
+
       clearTimeout(modalTimeout);
       clearInterval(progressInterval);
 
       setShowWakeupModal(false);
       setProgressStep(0);
-
       setLoading(false);
+
       if (response.data.success) {
         const userType = response.data.usertype;
+
         login(userType, username);
 
-        // Dynamic navigation depending on user role
         if (userType === 'audituser') {
           navigate(`/home-audit?username=${username}`);
         } else {
           navigate('/home');
         }
       } else {
-        setErrorMessage('Unauthorized to login. Please check username and password.');
+        setErrorMessage(
+          'Unauthorized to login. Please check username and password.'
+        );
       }
+
     } catch (error) {
+
       clearTimeout(modalTimeout);
       clearInterval(progressInterval);
 
       setShowWakeupModal(false);
       setProgressStep(0);
-
       setLoading(false);
+
       if (error.response) {
         if (error.response.status === 401) {
           setErrorMessage('Incorrect username or password.');
@@ -83,31 +92,10 @@ const LoginPage = () => {
       } else {
         setErrorMessage('Network error: Please check your connection.');
       }
+
       console.error(error);
     }
   };
-
-  // Show wake-up modal only if request takes longer than 3 seconds
-  const modalTimer = setTimeout(() => {
-    setShowWakeupModal(true);
-
-    let count = 15;
-
-    const interval = setInterval(() => {
-      count--;
-
-      if (count >= 0) {
-        setSeconds(count);
-      }
-
-      // Stop at zero (don't auto-close)
-      if (count <= 0) {
-        clearInterval(interval);
-      }
-    }, 1000);
-
-    window.loginInterval = interval;
-  }, 3000);
 
   return (
     <div className="login-root-container">
